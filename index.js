@@ -241,6 +241,7 @@ let arr = [1, 3, 6, 7, 11];
 console.log(twoSum(arr, 10 ))
 console.log();
 
+
 //Using hash 
 const twoSum2 = (nums, target) => {
   let hash = {};
@@ -260,6 +261,7 @@ const twoSum2 = (nums, target) => {
 
 console.log(twoSum2(arr, 10))
 console.log()
+
 
 function howManySquares1(num) {
   if(num <= 3){
@@ -287,6 +289,7 @@ function howManySquares1(num) {
 console.log(howManySquares1(25))
 console.log();
 
+
 //Optimized solution
 function howManySquares(n) {
   let perfectSqNumsLength = 1;
@@ -312,6 +315,7 @@ function howManySquares(n) {
 
   return numSquares(paths, perfectSqNums, n);
 }
+
 
 function numSquares(paths, perfectSqNums, n) {
   if (paths.hasOwnProperty(n)) {
@@ -357,4 +361,30 @@ function minCost(arr){
 console.log(minCost([[3,2,4],[3,4,6]]))
 console.log()
 
+
+/* You're given a string of random alphanumerical characters with a length between 0 and 1000.
+
+Write a method to return the first character in the string that does not repeat itself later on.
+*/
+function firstNonRepeat(str){
+  hash = {}
+  
+  for(i of str) {
+    if(hash[i]){
+      hash[i] += 1
+    } else{
+      hash[i] = 1
+    }
+  }
+  
+  for(i of str) {
+    if(hash[i] === 1){
+      return i
+    } 
+  }
+  
+  return ""
+}
+string = 'asdfsdafdasfjdfsafnnunl'
+console.log(firstNonRepeat(string))
 
